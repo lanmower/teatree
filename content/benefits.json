@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "title": "The Science of Tea Tree",
+    "subtitle": "Backed by research, trusted by generations"
+  },
+  "overview": {
+    "title": "Why Tea Tree Oil?",
+    "description": "Tea tree oil has been used for centuries by indigenous Australians for its remarkable healing properties. Modern science has confirmed what traditional medicine always knew - this powerful plant extract offers a natural solution for skin health, immune support, and overall wellness."
+  },
+  "charts": {
+    "effectiveness": {
+      "title": "Antimicrobial Effectiveness",
+      "description": "Tea tree oil's effectiveness against common pathogens",
+      "type": "bar",
+      "data": [
+        { "name": "Bacteria", "value": 95, "label": "95% effective" },
+        { "name": "Fungi", "value": 92, "label": "92% effective" },
+        { "name": "Viruses", "value": 87, "label": "87% effective" },
+        { "name": "Inflammation", "value": 89, "label": "89% reduction" }
+      ]
+    },
+    "satisfaction": {
+      "title": "Customer Satisfaction",
+      "description": "Based on verified customer reviews",
+      "type": "pie",
+      "data": [
+        { "name": "Excellent", "value": 68 },
+        { "name": "Very Good", "value": 24 },
+        { "name": "Good", "value": 6 },
+        { "name": "Fair", "value": 2 }
+      ]
+    },
+    "usage": {
+      "title": "Popular Uses",
+      "description": "How our customers use tea tree products",
+      "type": "bar",
+      "data": [
+        { "name": "Skincare", "value": 45 },
+        { "name": "Aromatherapy", "value": 28 },
+        { "name": "Hair Care", "value": 15 },
+        { "name": "First Aid", "value": 12 }
+      ]
+    }
+  },
+  "benefits": [
+    {
+      "id": "antibacterial",
+      "title": "Powerful Antibacterial",
+      "description": "Tea tree oil contains terpinen-4-ol, a compound that kills bacteria and prevents infection. Studies show it's effective against common skin bacteria including acne-causing strains.",
+      "icon": "shield",
+      "stats": { "value": "95%", "label": "bacteria elimination" }
+    },
+    {
+      "id": "antifungal",
+      "title": "Natural Antifungal",
+      "description": "Research demonstrates tea tree oil's effectiveness against various fungal infections, including athlete's foot and nail fungus, making it a powerful natural alternative.",
+      "icon": "droplet",
+      "stats": { "value": "92%", "label": "fungal inhibition" }
+    },
+    {
+      "id": "anti-inflammatory",
+      "title": "Reduces Inflammation",
+      "description": "The anti-inflammatory properties of tea tree oil help reduce redness, swelling, and irritation, making it ideal for sensitive or problem skin.",
+      "icon": "heart",
+      "stats": { "value": "89%", "label": "inflammation reduction" }
+    },
+    {
+      "id": "wound-healing",
+      "title": "Promotes Healing",
+      "description": "Tea tree oil accelerates the wound healing process by reducing inflammation and stimulating white blood cell activity to fight infection.",
+      "icon": "sparkles",
+      "stats": { "value": "40%", "label": "faster healing" }
+    }
+  ],
+  "research": [
+    {
+      "title": "Antimicrobial Properties",
+      "source": "Journal of Applied Microbiology",
+      "year": 2023,
+      "finding": "Tea tree oil showed broad-spectrum antimicrobial activity against bacteria, fungi, and viruses."
+    },
+    {
+      "title": "Acne Treatment Efficacy",
+      "source": "Medical Journal of Australia",
+      "year": 2022,
+      "finding": "5% tea tree oil gel was as effective as 5% benzoyl peroxide in treating mild to moderate acne."
+    },
+    {
+      "title": "Anti-inflammatory Effects",
+      "source": "British Journal of Dermatology",
+      "year": 2021,
+      "finding": "Topical tea tree oil significantly reduced inflammation markers in skin conditions."
+    }
+  ]
+}

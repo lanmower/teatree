@@ -1,0 +1,67 @@
+{
+  "site": {
+    "name": "Tea Tree Essentials",
+    "tagline": "Natural Remedies",
+    "description": "Premium natural remedies and essential oils crafted from pure tea tree extract",
+    "logo": "/images/image.png"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "Products", "path": "/products" },
+    { "label": "Benefits", "path": "/benefits" },
+    { "label": "About", "path": "/about" }
+  ],
+  "hero": {
+    "title": "Nature's Healing Power",
+    "subtitle": "Discover the pure essence of tea tree oil, sustainably sourced and crafted for your wellbeing",
+    "cta": {
+      "primary": { "label": "Shop Now", "path": "/products" },
+      "secondary": { "label": "Learn More", "path": "/benefits" }
+    }
+  },
+  "features": [
+    {
+      "title": "100% Pure",
+      "description": "Undiluted, therapeutic-grade essential oils",
+      "icon": "leaf"
+    },
+    {
+      "title": "Sustainably Sourced",
+      "description": "Ethically harvested from Australian farms",
+      "icon": "globe"
+    },
+    {
+      "title": "Lab Tested",
+      "description": "Every batch tested for purity and potency",
+      "icon": "shield"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "The purest tea tree oil I've ever used. It cleared my skin within weeks.",
+      "author": "Sarah M.",
+      "role": "Verified Buyer"
+    },
+    {
+      "quote": "I use the eucalyptus blend daily. It's become essential to my morning routine.",
+      "author": "James K.",
+      "role": "Verified Buyer"
+    },
+    {
+      "quote": "Finally, a brand that delivers on its promise of natural, effective products.",
+      "author": "Emily R.",
+      "role": "Verified Buyer"
+    }
+  ],
+  "footer": {
+    "contact": {
+      "email": "hello@teatreeessentials.com",
+      "phone": "+1 (555) 123-4567"
+    },
+    "social": {
+      "instagram": "teatreeessentials",
+      "facebook": "teatreeessentials",
+      "twitter": "teatreeess"
+    }
+  }
+}

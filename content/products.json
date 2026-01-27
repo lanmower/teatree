@@ -1,0 +1,143 @@
+{
+  "categories": [
+    {
+      "id": "essential-oils",
+      "name": "Essential Oils",
+      "description": "Pure, therapeutic-grade essential oils"
+    },
+    {
+      "id": "skincare",
+      "name": "Skincare",
+      "description": "Natural skincare solutions"
+    },
+    {
+      "id": "wellness",
+      "name": "Wellness",
+      "description": "Holistic wellness products"
+    }
+  ],
+  "products": [
+    {
+      "id": "pure-tea-tree-oil",
+      "name": "Pure Tea Tree Oil",
+      "category": "essential-oils",
+      "price": 24.99,
+      "originalPrice": 29.99,
+      "description": "100% pure Australian tea tree oil, steam-distilled for maximum potency. Known for its powerful antibacterial and antifungal properties.",
+      "shortDescription": "100% pure Australian tea tree essential oil",
+      "benefits": ["Antibacterial", "Antifungal", "Skin healing"],
+      "size": "30ml",
+      "inStock": true,
+      "featured": true,
+      "image": "/images/tea-tree-oil.jpg",
+      "rating": 4.9,
+      "reviews": 234
+    },
+    {
+      "id": "eucalyptus-blend",
+      "name": "Eucalyptus Blend",
+      "category": "essential-oils",
+      "price": 19.99,
+      "description": "A refreshing blend of eucalyptus and tea tree oils, perfect for respiratory support and air purification.",
+      "shortDescription": "Refreshing eucalyptus and tea tree blend",
+      "benefits": ["Respiratory support", "Air purification", "Mental clarity"],
+      "size": "30ml",
+      "inStock": true,
+      "featured": true,
+      "image": "/images/eucalyptus-blend.jpg",
+      "rating": 4.8,
+      "reviews": 156
+    },
+    {
+      "id": "lavender-calm",
+      "name": "Lavender Calm",
+      "category": "essential-oils",
+      "price": 22.99,
+      "description": "Soothing lavender essential oil blended with tea tree for relaxation and skin benefits.",
+      "shortDescription": "Calming lavender and tea tree fusion",
+      "benefits": ["Relaxation", "Sleep support", "Stress relief"],
+      "size": "30ml",
+      "inStock": true,
+      "featured": false,
+      "image": "/images/lavender-calm.jpg",
+      "rating": 4.7,
+      "reviews": 98
+    },
+    {
+      "id": "blemish-serum",
+      "name": "Blemish Control Serum",
+      "category": "skincare",
+      "price": 34.99,
+      "description": "Targeted treatment serum with concentrated tea tree oil to help clear blemishes and prevent breakouts naturally.",
+      "shortDescription": "Targeted blemish treatment with tea tree",
+      "benefits": ["Clears blemishes", "Prevents breakouts", "Reduces redness"],
+      "size": "15ml",
+      "inStock": true,
+      "featured": true,
+      "image": "/images/blemish-serum.jpg",
+      "rating": 4.8,
+      "reviews": 312
+    },
+    {
+      "id": "face-wash",
+      "name": "Purifying Face Wash",
+      "category": "skincare",
+      "price": 18.99,
+      "description": "Gentle daily cleanser infused with tea tree oil to purify pores without stripping natural moisture.",
+      "shortDescription": "Gentle daily purifying cleanser",
+      "benefits": ["Deep cleansing", "Pore purifying", "Gentle formula"],
+      "size": "150ml",
+      "inStock": true,
+      "featured": false,
+      "image": "/images/face-wash.jpg",
+      "rating": 4.6,
+      "reviews": 187
+    },
+    {
+      "id": "body-lotion",
+      "name": "Healing Body Lotion",
+      "category": "skincare",
+      "price": 28.99,
+      "description": "Nourishing body lotion with tea tree and aloe vera to soothe and protect skin throughout the day.",
+      "shortDescription": "Nourishing lotion with tea tree and aloe",
+      "benefits": ["Deep hydration", "Skin soothing", "All-day protection"],
+      "size": "250ml",
+      "inStock": true,
+      "featured": false,
+      "image": "/images/body-lotion.jpg",
+      "rating": 4.7,
+      "reviews": 143
+    },
+    {
+      "id": "wellness-kit",
+      "name": "Essential Wellness Kit",
+      "category": "wellness",
+      "price": 79.99,
+      "originalPrice": 99.99,
+      "description": "Complete starter kit including tea tree oil, eucalyptus blend, and a ceramic diffuser for whole-home wellness.",
+      "shortDescription": "Complete aromatherapy starter kit",
+      "benefits": ["Complete solution", "Home wellness", "Gift-ready"],
+      "size": "Kit",
+      "inStock": true,
+      "featured": true,
+      "image": "/images/wellness-kit.jpg",
+      "rating": 4.9,
+      "reviews": 89
+    },
+    {
+      "id": "diffuser",
+      "name": "Ceramic Diffuser",
+      "category": "wellness",
+      "price": 45.99,
+      "description": "Elegant ceramic essential oil diffuser with whisper-quiet operation and ambient lighting options.",
+      "shortDescription": "Elegant ceramic essential oil diffuser",
+      "benefits": ["Whisper quiet", "Ambient lighting", "Timer settings"],
+      "size": "200ml capacity",
+      "inStock": true,
+      "featured": false,
+      "image": "/images/diffuser.jpg",
+      "rating": 4.8,
+      "reviews": 201
+    }
+  ]
+}
