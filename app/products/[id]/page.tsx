@@ -349,6 +349,12 @@ function ProductDetailContent({ id }: { id: string }) {
   )
 }
 
+export function generateStaticParams() {
+  return productsData.products.map((product) => ({
+    id: product.id,
+  }))
+}
+
 export default function ProductDetailPage({
   params,
 }: {
