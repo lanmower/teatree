@@ -31,32 +31,16 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: |
-          rm -rf .next out/node_modules
-          python3 << 'PYEOF'
-          import os, shutil, stat, subprocess
-          if os.path.exists('/tmp/art'):
-              shutil.rmtree('/tmp/art')
-          os.makedirs('/tmp/art')
-          for root, dirs, files in os.walk('out'):
-              dirs[:] = [d for d in dirs if not os.path.islink(os.path.join(root, d))]
-              for d in dirs:
-                  p = os.path.join(root, d)
-                  os.makedirs(os.path.join('/tmp/art', os.path.relpath(p, 'out')), exist_ok=True)
-              for f in files:
-                  p = os.path.join(root, f)
-                  dest = os.path.join('/tmp/art', os.path.relpath(p, 'out'))
-                  with open(p, 'rb') as inp:
-                      with open(dest, 'wb') as out:
-                          out.write(inp.read())
-                  os.chmod(dest, stat.S_IMODE(os.stat(p).st_mode))
-          shutil.rmtree('out')
-          os.rename('/tmp/art', 'out')
-          result = subprocess.run(['find', 'out', '-type', 'f', '-links', '+1'], capture_output=True)
-          print(f"Hardlinked files: {result.stdout.decode().count(chr(10))}")
-          result = subprocess.run(['find', 'out', '-type', 'l'], capture_output=True)
-          print(f"Symlinks: {result.stdout.decode().count(chr(10))}")
-          PYEOF
-          echo "Artifact prepared"
+          rm -rf .next
+          mkdir -p /tmp/artifact
+          cd out
+          find . -type f | while read f; do
+            mkdir -p "/tmp/artifact/$(dirname "$f")"
+            cat "$f" > "/tmp/artifact/$f"
+          done
+          cd /
+          rm -rf out
+          mv /tmp/artifact out
 
       - uses: actions/upload-artifact@v4
         with:
