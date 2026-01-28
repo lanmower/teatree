@@ -31,30 +31,30 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: |
-          rm -rf .next
+          rm -rf .next out/node_modules
           python3 << 'PYEOF'
-          import os, shutil, stat
+          import os, shutil, stat, subprocess
           if os.path.exists('/tmp/art'):
               shutil.rmtree('/tmp/art')
           os.makedirs('/tmp/art')
           for root, dirs, files in os.walk('out'):
+              dirs[:] = [d for d in dirs if not os.path.islink(os.path.join(root, d))]
               for d in dirs:
                   p = os.path.join(root, d)
-                  if not os.path.islink(p):
-                      os.makedirs(os.path.join('/tmp/art', os.path.relpath(p, 'out')), exist_ok=True)
+                  os.makedirs(os.path.join('/tmp/art', os.path.relpath(p, 'out')), exist_ok=True)
               for f in files:
                   p = os.path.join(root, f)
-                  if not os.path.islink(p):
-                      dest = os.path.join('/tmp/art', os.path.relpath(p, 'out'))
-                      with open(p, 'rb') as inp:
-                          with open(dest, 'wb') as out:
-                              out.write(inp.read())
-                      os.chmod(dest, stat.S_IMODE(os.stat(p).st_mode))
+                  dest = os.path.join('/tmp/art', os.path.relpath(p, 'out'))
+                  with open(p, 'rb') as inp:
+                      with open(dest, 'wb') as out:
+                          out.write(inp.read())
+                  os.chmod(dest, stat.S_IMODE(os.stat(p).st_mode))
           shutil.rmtree('out')
           os.rename('/tmp/art', 'out')
-          import subprocess
           result = subprocess.run(['find', 'out', '-type', 'f', '-links', '+1'], capture_output=True)
-          print(f"Hardlinked files remaining: {result.stdout.decode().count(chr(10))}")
+          print(f"Hardlinked files: {result.stdout.decode().count(chr(10))}")
+          result = subprocess.run(['find', 'out', '-type', 'l'], capture_output=True)
+          print(f"Symlinks: {result.stdout.decode().count(chr(10))}")
           PYEOF
           echo "Artifact prepared"
 
