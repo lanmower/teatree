@@ -1,17 +1,7 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { Playfair_Display, Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
-
-const playfair = Playfair_Display({ 
-  subsets: ["latin"],
-  variable: '--font-serif'
-});
-const inter = Inter({ 
-  subsets: ["latin"],
-  variable: '--font-sans'
-});
 
 export const metadata: Metadata = {
   title: 'Tea Tree Essentials | Natural Remedies',
@@ -32,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${playfair.variable} ${inter.variable} font-sans antialiased bg-background text-foreground`}>
+      <body className="font-sans antialiased bg-background text-foreground">
         {children}
         <Analytics />
       </body>
