@@ -1,0 +1,70 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: pnpm install
+      - run: pnpm build && rm -rf .next
+      - name: Prepare artifact without hardlinks
+        run: |
+          mkdir -p /tmp/pages
+          python3 << 'PYEND'
+          import os, shutil
+          def copy_tree(src, dst):
+              for item in os.listdir(src):
+                  s = os.path.join(src, item)
+                  d = os.path.join(dst, item)
+                  if os.path.islink(s):
+                      continue
+                  elif os.path.isdir(s):
+                      os.makedirs(d, exist_ok=True)
+                      copy_tree(s, d)
+                  else:
+                      with open(s, 'rb') as inf:
+                          with open(d, 'wb') as outf:
+                              outf.write(inf.read())
+          copy_tree('out', '/tmp/pages')
+          PYEND
+          rm -rf out && mv /tmp/pages out
+      - uses: actions/upload-artifact@v4
+        with:
+          name: github-pages
+          path: out/
+          if-no-files-found: error
+          retention-days: 1
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
