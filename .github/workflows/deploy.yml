@@ -32,17 +32,19 @@ jobs:
       - run: pnpm build
       - run: |
           rm -rf .next
-          python3 -c "
-import os,glob
-for f in glob.glob('out/**/*',recursive=True):
- if os.path.isfile(f) and not os.path.islink(f):
-  s=os.stat(f)
-  if s.st_nlink>1:
-   d=open(f,'rb').read()
-   open(f,'wb').write(d)
-for f in glob.glob('out/**/*',recursive=True):
- if os.path.islink(f):os.remove(f)
-"
+          python3 << 'PYEND'
+          import os, glob
+          for f in glob.glob('out/**/*', recursive=True):
+              if os.path.isfile(f) and not os.path.islink(f):
+                  if os.stat(f).st_nlink > 1:
+                      with open(f, 'rb') as inp:
+                          data = inp.read()
+                      with open(f, 'wb') as out:
+                          out.write(data)
+          for f in glob.glob('out/**/*', recursive=True):
+              if os.path.islink(f):
+                  os.remove(f)
+          PYEND
 
       - uses: actions/upload-artifact@v4
         with:
