@@ -21,7 +21,7 @@ export function SiteFooter() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-3">
               <Image
-                src="/images/logo.png"
+                src="/teatree/images/logo.png"
                 alt="Tea Tree Essentials"
                 width={48}
                 height={48}
