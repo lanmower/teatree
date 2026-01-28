@@ -28,11 +28,18 @@ jobs:
         with:
           node-version: '20'
 
-      - run: pnpm install
-      - run: pnpm build && rm -rf .next
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm build
       - run: |
-          find out -type f -exec sh -c 'test "$(stat -f%l "$1" 2>/dev/null || stat -c %h "$1")" -gt 1 && (tmp=$(mktemp); cat "$1" > "$tmp"; mv "$tmp" "$1") || true' _ {} \;
-          find out -type l -delete
+          rm -rf .next
+          mkdir -p /tmp/final
+          while IFS= read -r f; do
+            dir=$(dirname "$f" | sed 's|^out||')
+            mkdir -p "/tmp/final$dir"
+            cat "$f" > "/tmp/final$dir/$(basename "$f")"
+          done < <(find out -type f)
+          rm -rf out
+          mv /tmp/final out
 
       - uses: actions/upload-artifact@v4
         with:
