@@ -14,15 +14,28 @@
 
 ### GitHub Pages Deployment
 - GitHub Pages "legacy" builder cannot build Next.js projects - it just serves static files
-- Artifacts from GitHub Actions workflow must be uploaded with `actions/upload-artifact@v4` (not v3)
+- Artifacts from GitHub Actions workflow must be uploaded with `actions/upload-pages-artifact@v3` action
 - Deploy step uses `actions/deploy-pages@v4` to grab the artifact and publish
 - **CRITICAL: pnpm creates hardlinks in node_modules that propagate to output artifacts**
   - GitHub Pages deployment fails if artifact contains any hardlinks or symlinks
-  - Solution: Use Python to recursively copy all files from output directory, reading+writing each file
-  - This breaks hardlinks by creating independent file copies instead of links
-  - Place this BEFORE `actions/upload-artifact@v4` in workflow
-- No pnpm-lock.yaml required in repo - remove from .gitignore if present, workflow handles fresh install
-- Site may take 1-2 minutes after successful build before being served due to CDN propagation
+  - Solution: After build, break hardlinks by reading each file with `cat` into a new directory
+  - Working approach:
+    ```bash
+    mkdir -p /tmp/pages
+    cd out
+    find . -type f | while read f; do
+      mkdir -p "/tmp/pages/$(dirname "$f")"
+      cat "$f" > "/tmp/pages/$f"
+    done
+    cd ..
+    rm -rf out
+    mv /tmp/pages out
+    ```
+  - This creates independent file copies, completely breaking hardlinks
+  - Place this step immediately after `pnpm build` and before artifact upload
+- Optional: Use `pnpm install --store-dir=/tmp/pnpm-store` to isolate pnpm cache
+- No pnpm-lock.yaml required in repo - workflow handles fresh install
+- Site goes live within 5-10 seconds after successful deploy action
 
 ### Suspense + Static Export Pattern (Key Solution)
 ```tsx
