@@ -30,24 +30,7 @@ jobs:
 
       - run: pnpm install
       - run: pnpm build && rm -rf .next
-      - name: Remove hardlinks
-        run: |
-          python3 << 'SCRIPT'
-          import os, shutil
-          def deref(s, d):
-            for i in os.listdir(s):
-              src, dst = os.path.join(s, i), os.path.join(d, i)
-              if os.path.islink(src): continue
-              elif os.path.isdir(src):
-                os.makedirs(dst, exist_ok=True)
-                deref(src, dst)
-              else:
-                with open(src, 'rb') as f: open(dst, 'wb').write(f.read())
-          os.makedirs('/tmp/clean', exist_ok=True)
-          deref('out', '/tmp/clean')
-          shutil.rmtree('out')
-          os.rename('/tmp/clean', 'out')
-          SCRIPT
+      - run: cp -r --dereference out /tmp/artifacts && rm -rf out && mv /tmp/artifacts out
 
       - uses: actions/upload-artifact@v4
         with:
