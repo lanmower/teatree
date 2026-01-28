@@ -29,7 +29,7 @@
       "size": "30ml",
       "inStock": true,
       "featured": true,
-      "image": "https://picsum.photos/id/29/600/600",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%234A5D23' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EPure Tea Tree Oil%3C/text%3E%3C/svg%3E",
       "rating": 4.9,
       "reviews": 234
     },
@@ -44,7 +44,7 @@
       "size": "30ml",
       "inStock": true,
       "featured": true,
-      "image": "https://picsum.photos/id/106/600/600",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%236B7B4C' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EEucalyptus Blend%3C/text%3E%3C/svg%3E",
       "rating": 4.8,
       "reviews": 156
     },
@@ -59,7 +59,7 @@
       "size": "30ml",
       "inStock": true,
       "featured": false,
-      "image": "https://picsum.photos/id/121/600/600",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%238B9A6E' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3ELavender Calm%3C/text%3E%3C/svg%3E",
       "rating": 4.7,
       "reviews": 98
     },
@@ -74,7 +74,7 @@
       "size": "15ml",
       "inStock": true,
       "featured": true,
-      "image": "https://picsum.photos/id/147/600/600",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%23A8B590' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EBlemish Serum%3C/text%3E%3C/svg%3E",
       "rating": 4.8,
       "reviews": 312
     },
@@ -89,7 +89,7 @@
       "size": "150ml",
       "inStock": true,
       "featured": false,
-      "image": "https://picsum.photos/id/27/600/600",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%23C5CEB2' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EFace Wash%3C/text%3E%3C/svg%3E",
       "rating": 4.6,
       "reviews": 187
     },
@@ -104,7 +104,7 @@
       "size": "250ml",
       "inStock": true,
       "featured": false,
-      "image": "https://picsum.photos/id/42/600/600",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%234A5D23' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EBody Lotion%3C/text%3E%3C/svg%3E",
       "rating": 4.7,
       "reviews": 143
     },
@@ -120,7 +120,7 @@
       "size": "Kit",
       "inStock": true,
       "featured": true,
-      "image": "https://picsum.photos/id/98/600/600",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%236B7B4C' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EWellness Kit%3C/text%3E%3C/svg%3E",
       "rating": 4.9,
       "reviews": 89
     },
@@ -135,7 +135,7 @@
       "size": "200ml capacity",
       "inStock": true,
       "featured": false,
-      "image": "https://picsum.photos/id/55/600/600",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%238B9A6E' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EDiffuser%3C/text%3E%3C/svg%3E",
       "rating": 4.8,
       "reviews": 201
     }
