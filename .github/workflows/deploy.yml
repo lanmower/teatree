@@ -33,7 +33,7 @@ jobs:
       - run: |
           rm -rf .next
           python3 << 'PYEOF'
-          import os, shutil
+          import os, shutil, stat
           if os.path.exists('/tmp/art'):
               shutil.rmtree('/tmp/art')
           os.makedirs('/tmp/art')
@@ -45,11 +45,16 @@ jobs:
               for f in files:
                   p = os.path.join(root, f)
                   if not os.path.islink(p):
+                      dest = os.path.join('/tmp/art', os.path.relpath(p, 'out'))
                       with open(p, 'rb') as inp:
-                          with open(os.path.join('/tmp/art', os.path.relpath(p, 'out')), 'wb') as out:
+                          with open(dest, 'wb') as out:
                               out.write(inp.read())
+                      os.chmod(dest, stat.S_IMODE(os.stat(p).st_mode))
           shutil.rmtree('out')
           os.rename('/tmp/art', 'out')
+          import subprocess
+          result = subprocess.run(['find', 'out', '-type', 'f', '-links', '+1'], capture_output=True)
+          print(f"Hardlinked files remaining: {result.stdout.decode().count(chr(10))}")
           PYEOF
           echo "Artifact prepared"
 
