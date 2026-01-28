@@ -33,8 +33,17 @@ jobs:
       - run: |
           # Remove .next directory and any cache directories to avoid upload issues
           rm -rf .next
-          # Ensure out directory has no symlinks or hard links
+          # Remove node_modules if it exists in out directory
+          find out -type d -name node_modules -exec rm -rf {} + 2>/dev/null || true
+          # Recursively find and resolve all symlinks in the out directory
           find out -type l -delete 2>/dev/null || true
+          # Verify no symlinks remain
+          if find out -type l 2>/dev/null | grep -q .; then
+            echo "Error: Symlinks still exist in out directory"
+            find out -type l
+            exit 1
+          fi
+          echo "Artifact cleanup complete"
 
       - uses: actions/upload-artifact@v4
         with:
