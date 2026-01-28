@@ -29,7 +29,7 @@
       "size": "30ml",
       "inStock": true,
       "featured": true,
-      "image": "/images/tea-tree-oil.jpg",
+      "image": "https://picsum.photos/id/29/600/600",
       "rating": 4.9,
       "reviews": 234
     },
@@ -44,7 +44,7 @@
       "size": "30ml",
       "inStock": true,
       "featured": true,
-      "image": "/images/eucalyptus-blend.jpg",
+      "image": "https://picsum.photos/id/106/600/600",
       "rating": 4.8,
       "reviews": 156
     },
@@ -59,7 +59,7 @@
       "size": "30ml",
       "inStock": true,
       "featured": false,
-      "image": "/images/lavender-calm.jpg",
+      "image": "https://picsum.photos/id/121/600/600",
       "rating": 4.7,
       "reviews": 98
     },
@@ -74,7 +74,7 @@
       "size": "15ml",
       "inStock": true,
       "featured": true,
-      "image": "/images/blemish-serum.jpg",
+      "image": "https://picsum.photos/id/147/600/600",
       "rating": 4.8,
       "reviews": 312
     },
@@ -89,7 +89,7 @@
       "size": "150ml",
       "inStock": true,
       "featured": false,
-      "image": "/images/face-wash.jpg",
+      "image": "https://picsum.photos/id/27/600/600",
       "rating": 4.6,
       "reviews": 187
     },
@@ -104,7 +104,7 @@
       "size": "250ml",
       "inStock": true,
       "featured": false,
-      "image": "/images/body-lotion.jpg",
+      "image": "https://picsum.photos/id/42/600/600",
       "rating": 4.7,
       "reviews": 143
     },
@@ -120,7 +120,7 @@
       "size": "Kit",
       "inStock": true,
       "featured": true,
-      "image": "/images/wellness-kit.jpg",
+      "image": "https://picsum.photos/id/98/600/600",
       "rating": 4.9,
       "reviews": 89
     },
@@ -135,7 +135,7 @@
       "size": "200ml capacity",
       "inStock": true,
       "featured": false,
-      "image": "/images/diffuser.jpg",
+      "image": "https://picsum.photos/id/55/600/600",
       "rating": 4.8,
       "reviews": 201
     }
