@@ -31,19 +31,15 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: |
-          # Remove .next directory and any cache directories to avoid upload issues
+          # Remove .next directory and cache
           rm -rf .next
-          # Remove node_modules if it exists in out directory
-          find out -type d -name node_modules -exec rm -rf {} + 2>/dev/null || true
-          # Recursively find and resolve all symlinks in the out directory
-          find out -type l -delete 2>/dev/null || true
-          # Verify no symlinks remain
-          if find out -type l 2>/dev/null | grep -q .; then
-            echo "Error: Symlinks still exist in out directory"
-            find out -type l
-            exit 1
-          fi
-          echo "Artifact cleanup complete"
+          # Copy out directory with dereferenced links to avoid hardlink/symlink issues
+          mkdir -p out_clean
+          cp -rL out/* out_clean/ 2>/dev/null || true
+          rm -rf out
+          mv out_clean out
+          # Final verification
+          find out -type l -o -type f -links +1 | head -1 && { echo "Error: Links still exist"; exit 1; } || echo "Artifact ready"
 
       - uses: actions/upload-artifact@v4
         with:
