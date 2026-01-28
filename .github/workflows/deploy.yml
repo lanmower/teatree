@@ -20,20 +20,36 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - run: npm ci
-      - run: npm run build
-      - run: rm -rf .next out && npm run build
+      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm build
+      - run: python3 << 'EOF'
+          import os
+          import shutil
+          os.makedirs('/tmp/pages', exist_ok=True)
+          for root, dirs, files in os.walk('out'):
+            for file in files:
+              src = os.path.join(root, file)
+              rel = os.path.relpath(src, 'out')
+              dst = os.path.join('/tmp/pages', rel)
+              os.makedirs(os.path.dirname(dst), exist_ok=True)
+              with open(src, 'rb') as f:
+                with open(dst, 'wb') as d:
+                  d.write(f.read())
+          shutil.rmtree('out')
+          os.rename('/tmp/pages', 'out')
+          EOF
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: out/
-          compression-level: 0
-          retention-days: 1
 
   deploy:
     environment:
