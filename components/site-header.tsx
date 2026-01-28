@@ -10,8 +10,7 @@ import { useCart } from "@/lib/cart-context"
 const navigation = [
   { label: "Home", path: "/" },
   { label: "Products", path: "/products" },
-  { label: "Benefits", path: "/benefits" },
-  { label: "About", path: "/about" },
+  { label: "Cart", path: "/cart" },
 ]
 
 export function SiteHeader() {

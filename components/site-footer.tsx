@@ -5,14 +5,10 @@ import { Mail, Phone } from "lucide-react"
 const navigation = {
   shop: [
     { name: "All Products", href: "/products" },
-    { name: "Essential Oils", href: "/products?category=essential-oils" },
-    { name: "Skincare", href: "/products?category=skincare" },
-    { name: "Wellness", href: "/products?category=wellness" },
+    { name: "Shopping Cart", href: "/cart" },
   ],
   company: [
-    { name: "About Us", href: "/about" },
-    { name: "Benefits", href: "/benefits" },
-    { name: "Contact", href: "/about#contact" },
+    { name: "Home", href: "/" },
   ],
 }
 
