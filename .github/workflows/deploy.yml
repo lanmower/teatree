@@ -32,10 +32,20 @@ jobs:
       - run: pnpm build
       - run: |
           rm -rf .next
-          mkdir -p /tmp/out_deref
-          (cd out && find . -type d -not -type l) | sort | xargs -I {} mkdir -p /tmp/out_deref/{}
-          (cd out && find . -type f -not -type l) | xargs -I {} sh -c 'cat out/{} > /tmp/out_deref/{}'
-          rm -rf out && mv /tmp/out_deref out
+          python3 -c "
+import os,shutil
+if os.path.exists('/tmp/art'):shutil.rmtree('/tmp/art')
+os.makedirs('/tmp/art')
+for root,dirs,files in os.walk('out'):
+    for d in dirs:
+        p=os.path.join(root,d)
+        if not os.path.islink(p):os.makedirs(os.path.join('/tmp/art',os.path.relpath(p,'out')),exist_ok=True)
+    for f in files:
+        p=os.path.join(root,f)
+        if not os.path.islink(p):open(os.path.join('/tmp/art',os.path.relpath(p,'out')),'wb').write(open(p,'rb').read())
+shutil.rmtree('out')
+os.rename('/tmp/art','out')
+"
           echo "Artifact prepared"
 
       - uses: actions/upload-artifact@v4
