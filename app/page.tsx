@@ -1,4 +1,3 @@
-import Image from "next/image"
 import Link from "next/link"
 import { Leaf, Globe, Shield, ChevronRight, Star } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -52,12 +51,10 @@ export default function HomePage() {
                 </div>
                 <div className="relative">
                   <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96">
-                    <Image
-                      src="/images/logo.png"
+                    <img
+                      src="/teatree/images/logo.png"
                       alt="Tea Tree Essentials Logo"
-                      fill
-                      className="object-contain drop-shadow-xl"
-                      priority
+                      className="w-full h-full object-contain drop-shadow-xl"
                     />
                   </div>
                 </div>
