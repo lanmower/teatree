@@ -28,24 +28,19 @@ jobs:
         with:
           node-version: '20'
 
-      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm install --store-dir=/tmp/pnpm-store --no-frozen-lockfile
       - run: pnpm build
-      - run: python3 << 'EOF'
-          import os
-          import shutil
-          os.makedirs('/tmp/pages', exist_ok=True)
-          for root, dirs, files in os.walk('out'):
-            for file in files:
-              src = os.path.join(root, file)
-              rel = os.path.relpath(src, 'out')
-              dst = os.path.join('/tmp/pages', rel)
-              os.makedirs(os.path.dirname(dst), exist_ok=True)
-              with open(src, 'rb') as f:
-                with open(dst, 'wb') as d:
-                  d.write(f.read())
-          shutil.rmtree('out')
-          os.rename('/tmp/pages', 'out')
-          EOF
+      - run: |
+          set -e
+          mkdir -p /tmp/pages
+          cd out
+          find . -type f | while read f; do
+            mkdir -p "/tmp/pages/$(dirname "$f")"
+            cat "$f" > "/tmp/pages/$f"
+          done
+          cd ..
+          rm -rf out
+          mv /tmp/pages out
 
       - uses: actions/upload-pages-artifact@v3
         with:
