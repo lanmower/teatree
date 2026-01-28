@@ -32,13 +32,34 @@ jobs:
       - run: pnpm build
       - run: |
           rm -rf .next
-          # Use tar with dereference to break all hardlinks and symlinks
-          mkdir -p /tmp/out_deref
-          tar -C out --dereference -cf - . | tar -xf - -C /tmp/out_deref
-          rm -rf out
-          mv /tmp/out_deref out
-          # Final check
-          [ $(find out -type l 2>/dev/null | wc -l) -eq 0 ] && echo "Artifact prepared" || { echo "Symlinks found"; exit 1; }
+          # Break all hardlinks and remove symlinks
+          python3 << 'EOF'
+import os
+import shutil
+import tempfile
+
+def deref_tree(src, dst):
+    os.makedirs(dst, exist_ok=True)
+    for root, dirs, files in os.walk(src):
+        rel = os.path.relpath(root, src)
+        dst_dir = os.path.join(dst, rel) if rel != '.' else dst
+        os.makedirs(dst_dir, exist_ok=True)
+        for f in files:
+            src_f = os.path.join(root, f)
+            dst_f = os.path.join(dst_dir, f)
+            with open(src_f, 'rb') as inf:
+                with open(dst_f, 'wb') as outf:
+                    outf.write(inf.read())
+        for d in dirs:
+            src_d = os.path.join(root, d)
+            if os.path.islink(src_d):
+                dirs.remove(d)
+
+deref_tree('out', '/tmp/out_clean')
+shutil.rmtree('out')
+shutil.move('/tmp/out_clean', 'out')
+EOF
+          echo "Artifact prepared"
 
       - uses: actions/upload-artifact@v4
         with:
