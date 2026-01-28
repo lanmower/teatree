@@ -30,7 +30,9 @@ jobs:
 
       - run: pnpm install
       - run: pnpm build && rm -rf .next
-      - run: cp -r --dereference out /tmp/artifacts && rm -rf out && mv /tmp/artifacts out
+      - run: |
+          find out -type f -exec sh -c 'test "$(stat -f%l "$1" 2>/dev/null || stat -c %h "$1")" -gt 1 && (tmp=$(mktemp); cat "$1" > "$tmp"; mv "$tmp" "$1") || true' _ {} \;
+          find out -type l -delete
 
       - uses: actions/upload-artifact@v4
         with:
