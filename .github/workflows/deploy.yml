@@ -30,27 +30,25 @@ jobs:
 
       - run: pnpm install
       - run: pnpm build && rm -rf .next
-      - name: Prepare artifact without hardlinks
+      - name: Remove hardlinks
         run: |
-          mkdir -p /tmp/pages
-          python3 << 'PYEND'
+          python3 << 'SCRIPT'
           import os, shutil
-          def copy_tree(src, dst):
-              for item in os.listdir(src):
-                  s = os.path.join(src, item)
-                  d = os.path.join(dst, item)
-                  if os.path.islink(s):
-                      continue
-                  elif os.path.isdir(s):
-                      os.makedirs(d, exist_ok=True)
-                      copy_tree(s, d)
-                  else:
-                      with open(s, 'rb') as inf:
-                          with open(d, 'wb') as outf:
-                              outf.write(inf.read())
-          copy_tree('out', '/tmp/pages')
-          PYEND
-          rm -rf out && mv /tmp/pages out
+          def deref(s, d):
+            for i in os.listdir(s):
+              src, dst = os.path.join(s, i), os.path.join(d, i)
+              if os.path.islink(src): continue
+              elif os.path.isdir(src):
+                os.makedirs(dst, exist_ok=True)
+                deref(src, dst)
+              else:
+                with open(src, 'rb') as f: open(dst, 'wb').write(f.read())
+          os.makedirs('/tmp/clean', exist_ok=True)
+          deref('out', '/tmp/clean')
+          shutil.rmtree('out')
+          os.rename('/tmp/clean', 'out')
+          SCRIPT
+
       - uses: actions/upload-artifact@v4
         with:
           name: github-pages
