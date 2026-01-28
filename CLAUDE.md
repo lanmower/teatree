@@ -60,3 +60,17 @@ This pattern allows dynamic routes + search params + static prerendering to work
 ### Logo Processing
 - Logo shadow removed via alpha channel manipulation to eliminate semi-transparent pixels
 - Python PIL-based approach: remove pixels with alpha values 0-200, keep fully opaque (alpha > 200)
+
+## Navigation & Routing
+
+### Valid Routes
+- `/` - Home page (all featured products)
+- `/products` - Product listing page
+- `/products/[id]` - Individual product detail pages (8 products with dynamic routes)
+- `/cart` - Shopping cart page
+
+### Navigation Links
+- Header has: Home, Products, Cart links
+- Footer has: All Products, Shopping Cart, Home links
+- All navigation links must point to valid routes only
+- Removed links to non-existent pages (/about, /benefits) that caused 404 errors
