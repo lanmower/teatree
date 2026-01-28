@@ -20,32 +20,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: pnpm/action-setup@v2
-        with:
-          version: 8
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
 
-      - run: pnpm install --no-frozen-lockfile
-      - run: pnpm build
-      - run: |
-          rm -rf .next
-          mkdir -p /tmp/final
-          while IFS= read -r f; do
-            dir=$(dirname "$f" | sed 's|^out||')
-            mkdir -p "/tmp/final$dir"
-            cat "$f" > "/tmp/final$dir/$(basename "$f")"
-          done < <(find out -type f)
-          rm -rf out
-          mv /tmp/final out
+      - run: npm ci
+      - run: npm run build
+      - run: rm -rf .next out && npm run build
 
       - uses: actions/upload-artifact@v4
         with:
           name: github-pages
           path: out/
-          if-no-files-found: error
+          compression-level: 0
           retention-days: 1
 
   deploy:
