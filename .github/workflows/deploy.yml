@@ -32,15 +32,17 @@ jobs:
       - run: pnpm build
       - run: |
           rm -rf .next
-          mkdir -p /tmp/artifact
-          cd out
-          find . -type f | while read f; do
-            mkdir -p "/tmp/artifact/$(dirname "$f")"
-            cat "$f" > "/tmp/artifact/$f"
-          done
-          cd /
-          rm -rf out
-          mv /tmp/artifact out
+          python3 -c "
+import os,glob
+for f in glob.glob('out/**/*',recursive=True):
+ if os.path.isfile(f) and not os.path.islink(f):
+  s=os.stat(f)
+  if s.st_nlink>1:
+   d=open(f,'rb').read()
+   open(f,'wb').write(d)
+for f in glob.glob('out/**/*',recursive=True):
+ if os.path.islink(f):os.remove(f)
+"
 
       - uses: actions/upload-artifact@v4
         with:
