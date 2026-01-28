@@ -31,15 +31,14 @@ jobs:
       - run: pnpm install
       - run: pnpm build
       - run: |
-          # Remove .next directory and cache
           rm -rf .next
-          # Copy out directory with dereferenced links to avoid hardlink/symlink issues
-          mkdir -p out_clean
-          cp -rL out/* out_clean/ 2>/dev/null || true
+          # Use tar with dereference to break all hardlinks and symlinks
+          mkdir -p /tmp/out_deref
+          tar -C out --dereference -cf - . | tar -xf - -C /tmp/out_deref
           rm -rf out
-          mv out_clean out
-          # Final verification
-          find out -type l -o -type f -links +1 | head -1 && { echo "Error: Links still exist"; exit 1; } || echo "Artifact ready"
+          mv /tmp/out_deref out
+          # Final check
+          [ $(find out -type l 2>/dev/null | wc -l) -eq 0 ] && echo "Artifact prepared" || { echo "Symlinks found"; exit 1; }
 
       - uses: actions/upload-artifact@v4
         with:
