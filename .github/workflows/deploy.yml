@@ -32,10 +32,16 @@ jobs:
       - run: pnpm build
       - run: |
           rm -rf .next
+          echo "Files with hardlinks before cleanup:"
+          find out -type f -links +1 | wc -l || echo "0"
           mkdir -p /tmp/out_final
-          rsync -av --no-H out/ /tmp/out_final/
+          cd out && find . -type f -exec sh -c 'cat "$1" > /tmp/out_final/"$1"' _ {} \;
+          cd /tmp/out_final && find . -type l -delete 2>/dev/null || true
+          cd /
           rm -rf out
           mv /tmp/out_final out
+          echo "Files with hardlinks after cleanup:"
+          find out -type f -links +1 | wc -l || echo "0"
           echo "Artifact prepared"
 
       - uses: actions/upload-artifact@v4
