@@ -49,3 +49,14 @@ export function ClientComponent() { ... }
 ```
 
 This pattern allows dynamic routes + search params + static prerendering to work together.
+
+## Image Handling
+
+### Product Images
+- Demo product images sourced from picsum.photos (free placeholder service)
+- Format: `https://picsum.photos/id/{id}/600/600` - each product has unique ID
+- All images load correctly without requiring local image files
+
+### Logo Processing
+- Logo shadow removed via alpha channel manipulation to eliminate semi-transparent pixels
+- Python PIL-based approach: remove pixels with alpha values 0-200, keep fully opaque (alpha > 200)
