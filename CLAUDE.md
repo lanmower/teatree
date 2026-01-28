@@ -53,9 +53,10 @@ This pattern allows dynamic routes + search params + static prerendering to work
 ## Image Handling
 
 ### Product Images
-- Demo product images sourced from picsum.photos (free placeholder service)
-- Format: `https://picsum.photos/id/{id}/600/600` - each product has unique ID
-- All images load correctly without requiring local image files
+- Product images use SVG data URIs with brand colors
+- Format: `data:image/svg+xml,%3Csvg...%3E` embedded directly in products.json
+- Self-contained approach: no external dependencies, images always available
+- Each product has a branded SVG using the Tea Tree Essentials color palette
 
 ### Logo Processing
 - Logo shadow removed via alpha channel manipulation to eliminate semi-transparent pixels
