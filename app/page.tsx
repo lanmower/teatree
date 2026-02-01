@@ -6,7 +6,6 @@ import { ProductCard } from "@/components/product-card"
 import { SiteHeader } from "@/components/site-header"
 import { SiteFooter } from "@/components/site-footer"
 import { CartProvider } from "@/lib/cart-context"
-import { PromotionalBanner } from "@/components/promotional-banner"
 import productsData from "@/content/products.json"
 import configData from "@/content/config.json"
 
@@ -17,27 +16,11 @@ const iconMap = {
 }
 
 export default function HomePage() {
-  const featuredProducts = productsData.products.filter((p) => p.featured && !p.seasonal)
-  const seasonalProducts = productsData.products.filter((p) => p.seasonal)
+  const featuredProducts = productsData.products.filter((p) => p.featured)
 
   return (
     <CartProvider>
       <div className="min-h-screen flex flex-col">
-        {/* Promotional Banner */}
-        <PromotionalBanner
-          banner={{
-            id: "seasonal-banner",
-            type: "seasonal",
-            icon: "❄️",
-            title: "Seasonal Collection Now Available",
-            message: "Discover our limited-edition seasonal blends crafted for the current season.",
-            cta: { label: "Shop Seasonal", path: "/products?category=seasonal" },
-            backgroundColor: "bg-gradient-to-r from-amber-500/10 to-orange-500/10",
-            textColor: "text-foreground",
-            closeable: true,
-          }}
-        />
-
         <SiteHeader />
 
         <main className="flex-1">

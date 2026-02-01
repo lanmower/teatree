@@ -4,11 +4,6 @@
       "id": "distillery",
       "name": "Distillery Products",
       "description": "Premium distilled tea tree products"
-    },
-    {
-      "id": "seasonal",
-      "name": "Seasonal Picks",
-      "description": "Limited edition seasonal collections"
     }
   ],
   "products": [
@@ -19,13 +14,20 @@
       "price": 349.99,
       "description": "Premium 100% pure tea tree distillate. Steam-distilled from the finest tea tree leaves sourced from sustainable farms. Ideal for skincare formulation, aromatherapy, and therapeutic applications.",
       "shortDescription": "Premium pure tea tree distillate",
-      "benefits": ["Antibacterial", "Antifungal", "Therapeutic grade"],
+      "benefits": [
+        "Antibacterial",
+        "Antifungal",
+        "Therapeutic grade"
+      ],
       "size": "1L",
       "inStock": true,
       "featured": true,
       "seasonal": false,
       "sourcing": "Sustainably harvested from South African tea tree farms",
-      "certifications": ["GMP Certified", "ISO 9001"],
+      "certifications": [
+        "GMP Certified",
+        "ISO 9001"
+      ],
       "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%234A5D23' width='600' height='600'/%3E%3Ccircle cx='300' cy='250' r='100' fill='%2381B029' opacity='0.3'/%3E%3Crect x='250' y='320' width='100' height='80' fill='%23E8F5E9' rx='5'/%3E%3Ctext x='300' y='370' font-size='24' fill='%234A5D23' text-anchor='middle' font-weight='bold'%3E100% Pure%3C/text%3E%3Ctext x='300' y='560' font-size='32' fill='%23fff' text-anchor='middle' font-weight='bold'%3EDistillate%3C/text%3E%3C/svg%3E",
       "rating": 4.9,
       "reviews": 12
@@ -37,13 +39,20 @@
       "price": 89.99,
       "description": "Pure tea tree hydrosol (floral water) - a gentler alternative to essential oil. The aromatic water byproduct from steam distillation, perfect for facial toners, room sprays, and natural beauty applications.",
       "shortDescription": "Pure tea tree hydrosol for skincare and aromatics",
-      "benefits": ["Gentle on skin", "Antimicrobial", "Multi-use"],
+      "benefits": [
+        "Gentle on skin",
+        "Antimicrobial",
+        "Multi-use"
+      ],
       "size": "500ml",
       "inStock": true,
       "featured": true,
       "seasonal": false,
       "sourcing": "Steam-distilled from premium tea tree leaves",
-      "certifications": ["Natural Product", "Cruelty-Free"],
+      "certifications": [
+        "Natural Product",
+        "Cruelty-Free"
+      ],
       "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%236B7B4C' width='600' height='600'/%3E%3Cpath d='M 300 150 Q 250 200 250 300 Q 250 400 300 450 Q 350 400 350 300 Q 350 200 300 150' fill='%23A8D5BA' opacity='0.6'/%3E%3Crect x='240' y='400' width='120' height='40' fill='%238FA57D' rx='3'/%3E%3Ctext x='300' y='560' font-size='32' fill='%23fff' text-anchor='middle' font-weight='bold'%3EHydrosol%3C/text%3E%3C/svg%3E",
       "rating": 4.8,
       "reviews": 8
@@ -55,13 +64,20 @@
       "price": 199.99,
       "description": "Highly concentrated tea tree extract for professional formulations and serious skincare routines. This premium concentrate delivers maximum potency in a smaller volume.",
       "shortDescription": "High-potency concentrated extract",
-      "benefits": ["Highly concentrated", "Professional grade", "Long-lasting"],
+      "benefits": [
+        "Highly concentrated",
+        "Professional grade",
+        "Long-lasting"
+      ],
       "size": "250ml",
       "inStock": true,
       "featured": false,
       "seasonal": false,
       "sourcing": "Cold-extracted from premium tea tree leaves",
-      "certifications": ["Eco-Certified", "Vegan"],
+      "certifications": [
+        "Eco-Certified",
+        "Vegan"
+      ],
       "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%235C6B31' width='600' height='600'/%3E%3Crect x='200' y='180' width='200' height='280' fill='%238B9D3D' stroke='%23fff' stroke-width='3' rx='5'/%3E%3Crect x='220' y='200' width='160' height='240' fill='%23D4E89E' opacity='0.7'/%3E%3Ctext x='300' y='560' font-size='28' fill='%23fff' text-anchor='middle' font-weight='bold'%3EConcentrate%3C/text%3E%3C/svg%3E",
       "rating": 4.7,
       "reviews": 6
@@ -73,52 +89,23 @@
       "price": 45.99,
       "description": "Pure tea tree essential oil extracted through steam distillation. Perfect for aromatherapy diffusers, bath soaks, and blending with carrier oils.",
       "shortDescription": "Pure essential oil for aromatherapy",
-      "benefits": ["Pure essential oil", "Aromatic", "Versatile"],
+      "benefits": [
+        "Pure essential oil",
+        "Aromatic",
+        "Versatile"
+      ],
       "size": "30ml",
       "inStock": true,
       "featured": false,
       "seasonal": false,
       "sourcing": "Sustainably sourced from trusted suppliers",
-      "certifications": ["Organic", "Fair Trade"],
+      "certifications": [
+        "Organic",
+        "Fair Trade"
+      ],
       "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%2345622C' width='600' height='600'/%3E%3Ccircle cx='300' cy='280' r='60' fill='%23FFD700' opacity='0.8'/%3E%3Cpath d='M 300 200 L 260 180 L 280 220 L 240 240 L 290 260 L 270 300 L 320 270 L 340 320 L 330 260 L 380 240 L 320 220 L 340 180 Z' fill='%23FFA500' opacity='0.6'/%3E%3Ctext x='300' y='560' font-size='28' fill='%23fff' text-anchor='middle' font-weight='bold'%3EEssential Oil%3C/text%3E%3C/svg%3E",
       "rating": 4.6,
       "reviews": 15
-    },
-    {
-      "id": "winter-blend",
-      "name": "Winter Wellness Blend",
-      "category": "seasonal",
-      "price": 129.99,
-      "description": "Limited seasonal blend combining tea tree with warming essential oils. Perfect for winter immunity support and respiratory wellness.",
-      "shortDescription": "Seasonal winter immunity blend",
-      "benefits": ["Warming", "Seasonal", "Immune support"],
-      "size": "100ml",
-      "inStock": true,
-      "featured": true,
-      "seasonal": true,
-      "sourcing": "Blended seasonally with imported winter botanicals",
-      "certifications": ["Seasonal Limited", "Pure Blend"],
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%231F4788' width='600' height='600'/%3E%3Ctext x='300' y='180' font-size='60' text-anchor='middle' fill='%23FFF' opacity='0.7'%3E❄%3C/text%3E%3Crect x='200' y='280' width='200' height='180' fill='%23E8F4F8' opacity='0.9' rx='10'/%3E%3Ctext x='300' y='370' font-size='24' fill='%231F4788' text-anchor='middle' font-weight='bold'%3EWinter%3C/text%3E%3Ctext x='300' y='400' font-size='24' fill='%231F4788' text-anchor='middle' font-weight='bold'%3EWellness%3C/text%3E%3Ctext x='300' y='560' font-size='28' fill='%23fff' text-anchor='middle' font-weight='bold'%3ELimited Edition%3C/text%3E%3C/svg%3E",
-      "rating": 4.9,
-      "reviews": 3
-    },
-    {
-      "id": "summer-blend",
-      "name": "Summer Refresh Blend",
-      "category": "seasonal",
-      "price": 119.99,
-      "description": "Limited seasonal blend with cooling and refreshing notes. Perfect for summer skincare and creating a fresh atmosphere.",
-      "shortDescription": "Seasonal summer refresh blend",
-      "benefits": ["Cooling", "Seasonal", "Refreshing"],
-      "size": "100ml",
-      "inStock": true,
-      "featured": true,
-      "seasonal": true,
-      "sourcing": "Blended seasonally with cooling botanicals",
-      "certifications": ["Seasonal Limited", "Pure Blend"],
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%2311887F' width='600' height='600'/%3E%3Ctext x='300' y='180' font-size='60' text-anchor='middle' fill='%23FFF' opacity='0.7'%3E☀%3C/text%3E%3Crect x='200' y='280' width='200' height='180' fill='%23D0F4F0' opacity='0.9' rx='10'/%3E%3Ctext x='300' y='370' font-size='24' fill='%2311887F' text-anchor='middle' font-weight='bold'%3ESummer%3C/text%3E%3Ctext x='300' y='400' font-size='24' fill='%2311887F' text-anchor='middle' font-weight='bold'%3ERefresh%3C/text%3E%3Ctext x='300' y='560' font-size='28' fill='%23fff' text-anchor='middle' font-weight='bold'%3ELimited Edition%3C/text%3E%3C/svg%3E",
-      "rating": 4.7,
-      "reviews": 5
     },
     {
       "id": "sample-kit",
@@ -127,13 +114,20 @@
       "price": 34.99,
       "description": "Perfect starter kit with small samples of our most popular products. Great for trying before committing to full sizes.",
       "shortDescription": "Sampler kit with multiple products",
-      "benefits": ["Great value", "Try all products", "Perfect gift"],
+      "benefits": [
+        "Great value",
+        "Try all products",
+        "Perfect gift"
+      ],
       "size": "Sample sizes",
       "inStock": true,
       "featured": false,
       "seasonal": false,
       "sourcing": "Curated from our best-selling products",
-      "certifications": ["Value Pack", "Beginner Friendly"],
+      "certifications": [
+        "Value Pack",
+        "Beginner Friendly"
+      ],
       "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%233E5C23' width='600' height='600'/%3E%3Crect x='150' y='200' width='80' height='120' fill='%236B7B4C' stroke='%23fff' stroke-width='2'/%3E%3Crect x='260' y='180' width='80' height='140' fill='%234A5D23' stroke='%23fff' stroke-width='2'/%3E%3Crect x='370' y='200' width='80' height='120' fill='%238B9D3D' stroke='%23fff' stroke-width='2'/%3E%3Ctext x='300' y='560' font-size='28' fill='%23fff' text-anchor='middle' font-weight='bold'%3ESample Kit%3C/text%3E%3C/svg%3E",
       "rating": 4.5,
       "reviews": 4
@@ -145,13 +139,20 @@
       "price": 249.99,
       "description": "Elegant gift set with our premium products beautifully packaged. Includes distillate, hydrosol, and essential oil with gift wrapping.",
       "shortDescription": "Luxury gift set with premium products",
-      "benefits": ["Gift ready", "Premium selection", "Beautiful packaging"],
+      "benefits": [
+        "Gift ready",
+        "Premium selection",
+        "Beautiful packaging"
+      ],
       "size": "Multi-product set",
       "inStock": true,
       "featured": true,
       "seasonal": false,
       "sourcing": "Curated premium product selection",
-      "certifications": ["Gift Ready", "Premium"],
+      "certifications": [
+        "Gift Ready",
+        "Premium"
+      ],
       "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%236B4423' width='600' height='600'/%3E%3Crect x='150' y='150' width='300' height='300' fill='%23D4A574' stroke='%23fff' stroke-width='3' rx='10'/%3E%3Cpath d='M 300 80 L 320 150 L 280 150 Z' fill='%23D4A574'/%3E%3Ccircle cx='300' cy='310' r='40' fill='%238B6F47' opacity='0.7'/%3E%3Ctext x='300' y='560' font-size='28' fill='%23fff' text-anchor='middle' font-weight='bold'%3EGift Set%3C/text%3E%3C/svg%3E",
       "rating": 4.8,
       "reviews": 9
