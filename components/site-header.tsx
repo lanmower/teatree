@@ -32,7 +32,7 @@ export function SiteHeader() {
             />
             <div className="hidden sm:block">
               <p className="font-serif text-lg font-semibold text-foreground">Tea Tree Essentials</p>
-              <p className="text-xs text-muted-foreground tracking-wider uppercase">Natural Remedies</p>
+              <p className="text-xs text-muted-foreground tracking-wider uppercase">South Africa</p>
             </div>
           </Link>
         </div>

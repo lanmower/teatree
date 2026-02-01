@@ -1,143 +1,41 @@
 {
   "categories": [
     {
-      "id": "essential-oils",
-      "name": "Essential Oils",
-      "description": "Pure, therapeutic-grade essential oils"
-    },
-    {
-      "id": "skincare",
-      "name": "Skincare",
-      "description": "Natural skincare solutions"
-    },
-    {
-      "id": "wellness",
-      "name": "Wellness",
-      "description": "Holistic wellness products"
+      "id": "distillery",
+      "name": "Distillery Products",
+      "description": "Premium distilled tea tree products"
     }
   ],
   "products": [
     {
-      "id": "pure-tea-tree-oil",
-      "name": "Pure Tea Tree Oil",
-      "category": "essential-oils",
-      "price": 24.99,
-      "originalPrice": 29.99,
-      "description": "100% pure Australian tea tree oil, steam-distilled for maximum potency. Known for its powerful antibacterial and antifungal properties.",
-      "shortDescription": "100% pure Australian tea tree essential oil",
-      "benefits": ["Antibacterial", "Antifungal", "Skin healing"],
-      "size": "30ml",
+      "id": "distillate",
+      "name": "Tea Tree Distillate",
+      "category": "distillery",
+      "price": 349.99,
+      "description": "Premium 100% pure tea tree distillate - pharmaceutical grade. Steam-distilled from the finest tea tree leaves sourced from sustainable farms. Ideal for skincare formulation, aromatherapy, and therapeutic applications.",
+      "shortDescription": "Premium pharmaceutical-grade tea tree distillate",
+      "benefits": ["Antibacterial", "Antifungal", "Therapeutic grade"],
+      "size": "1L",
       "inStock": true,
       "featured": true,
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%234A5D23' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EPure Tea Tree Oil%3C/text%3E%3C/svg%3E",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%234A5D23' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3ETea Tree Distillate%3C/text%3E%3C/svg%3E",
       "rating": 4.9,
-      "reviews": 234
+      "reviews": 0
     },
     {
-      "id": "eucalyptus-blend",
-      "name": "Eucalyptus Blend",
-      "category": "essential-oils",
-      "price": 19.99,
-      "description": "A refreshing blend of eucalyptus and tea tree oils, perfect for respiratory support and air purification.",
-      "shortDescription": "Refreshing eucalyptus and tea tree blend",
-      "benefits": ["Respiratory support", "Air purification", "Mental clarity"],
-      "size": "30ml",
+      "id": "hydrosol",
+      "name": "Tea Tree Hydrosol",
+      "category": "distillery",
+      "price": 89.99,
+      "description": "Pure tea tree hydrosol (floral water) - a gentler alternative to essential oil. The aromatic water byproduct from steam distillation, perfect for facial toners, room sprays, and natural beauty applications.",
+      "shortDescription": "Pure tea tree hydrosol for skincare and aromatics",
+      "benefits": ["Gentle on skin", "Antimicrobial", "Multi-use"],
+      "size": "500ml",
       "inStock": true,
       "featured": true,
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%236B7B4C' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EEucalyptus Blend%3C/text%3E%3C/svg%3E",
+      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%236B7B4C' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3ETea Tree Hydrosol%3C/text%3E%3C/svg%3E",
       "rating": 4.8,
-      "reviews": 156
-    },
-    {
-      "id": "lavender-calm",
-      "name": "Lavender Calm",
-      "category": "essential-oils",
-      "price": 22.99,
-      "description": "Soothing lavender essential oil blended with tea tree for relaxation and skin benefits.",
-      "shortDescription": "Calming lavender and tea tree fusion",
-      "benefits": ["Relaxation", "Sleep support", "Stress relief"],
-      "size": "30ml",
-      "inStock": true,
-      "featured": false,
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%238B9A6E' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3ELavender Calm%3C/text%3E%3C/svg%3E",
-      "rating": 4.7,
-      "reviews": 98
-    },
-    {
-      "id": "blemish-serum",
-      "name": "Blemish Control Serum",
-      "category": "skincare",
-      "price": 34.99,
-      "description": "Targeted treatment serum with concentrated tea tree oil to help clear blemishes and prevent breakouts naturally.",
-      "shortDescription": "Targeted blemish treatment with tea tree",
-      "benefits": ["Clears blemishes", "Prevents breakouts", "Reduces redness"],
-      "size": "15ml",
-      "inStock": true,
-      "featured": true,
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%23A8B590' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EBlemish Serum%3C/text%3E%3C/svg%3E",
-      "rating": 4.8,
-      "reviews": 312
-    },
-    {
-      "id": "face-wash",
-      "name": "Purifying Face Wash",
-      "category": "skincare",
-      "price": 18.99,
-      "description": "Gentle daily cleanser infused with tea tree oil to purify pores without stripping natural moisture.",
-      "shortDescription": "Gentle daily purifying cleanser",
-      "benefits": ["Deep cleansing", "Pore purifying", "Gentle formula"],
-      "size": "150ml",
-      "inStock": true,
-      "featured": false,
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%23C5CEB2' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EFace Wash%3C/text%3E%3C/svg%3E",
-      "rating": 4.6,
-      "reviews": 187
-    },
-    {
-      "id": "body-lotion",
-      "name": "Healing Body Lotion",
-      "category": "skincare",
-      "price": 28.99,
-      "description": "Nourishing body lotion with tea tree and aloe vera to soothe and protect skin throughout the day.",
-      "shortDescription": "Nourishing lotion with tea tree and aloe",
-      "benefits": ["Deep hydration", "Skin soothing", "All-day protection"],
-      "size": "250ml",
-      "inStock": true,
-      "featured": false,
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%234A5D23' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EBody Lotion%3C/text%3E%3C/svg%3E",
-      "rating": 4.7,
-      "reviews": 143
-    },
-    {
-      "id": "wellness-kit",
-      "name": "Essential Wellness Kit",
-      "category": "wellness",
-      "price": 79.99,
-      "originalPrice": 99.99,
-      "description": "Complete starter kit including tea tree oil, eucalyptus blend, and a ceramic diffuser for whole-home wellness.",
-      "shortDescription": "Complete aromatherapy starter kit",
-      "benefits": ["Complete solution", "Home wellness", "Gift-ready"],
-      "size": "Kit",
-      "inStock": true,
-      "featured": true,
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%236B7B4C' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EWellness Kit%3C/text%3E%3C/svg%3E",
-      "rating": 4.9,
-      "reviews": 89
-    },
-    {
-      "id": "diffuser",
-      "name": "Ceramic Diffuser",
-      "category": "wellness",
-      "price": 45.99,
-      "description": "Elegant ceramic essential oil diffuser with whisper-quiet operation and ambient lighting options.",
-      "shortDescription": "Elegant ceramic essential oil diffuser",
-      "benefits": ["Whisper quiet", "Ambient lighting", "Timer settings"],
-      "size": "200ml capacity",
-      "inStock": true,
-      "featured": false,
-      "image": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Crect fill='%238B9A6E' width='600' height='600'/%3E%3Ctext x='50%' y='50%' font-size='48' fill='%23fff' text-anchor='middle' dy='.3em' font-family='Arial'%3EDiffuser%3C/text%3E%3C/svg%3E",
-      "rating": 4.8,
-      "reviews": 201
+      "reviews": 0
     }
   ]
 }
