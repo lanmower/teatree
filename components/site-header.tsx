@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Menu, X, ShoppingBag } from "lucide-react"
+import { Menu, X, ShoppingBag, Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useCart } from "@/lib/cart-context"
 
@@ -15,7 +15,8 @@ const navigation = [
 
 export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const { items } = useCart()
+  const [showCartPreview, setShowCartPreview] = useState(false)
+  const { items, total, removeItem } = useCart()
   const itemCount = items.reduce((sum, item) => sum + item.quantity, 0)
 
   return (
@@ -61,16 +62,70 @@ export function SiteHeader() {
         </div>
         
         <div className="hidden lg:flex lg:flex-1 lg:justify-end lg:gap-4">
-          <Link href="/cart">
-            <Button variant="outline" size="sm" className="relative bg-transparent">
+          <div className="relative">
+            <Button 
+              variant="outline" 
+              size="sm" 
+              className="relative bg-transparent"
+              onMouseEnter={() => setShowCartPreview(true)}
+              onMouseLeave={() => setShowCartPreview(false)}
+            >
               <ShoppingBag className="h-4 w-4" />
               <span className="ml-2">Cart</span>
               {itemCount > 0 && (
-                <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center">
+                <span className="absolute -top-2 -right-2 h-5 w-5 rounded-full bg-primary text-primary-foreground text-xs flex items-center justify-center font-semibold">
                   {itemCount}
                 </span>
               )}
             </Button>
+
+            {/* Floating Cart Preview */}
+            {showCartPreview && itemCount > 0 && (
+              <div className="absolute right-0 mt-2 w-72 bg-background border border-border rounded-lg shadow-xl z-50">
+                <div className="p-4 border-b border-border">
+                  <h3 className="font-semibold text-foreground">Cart Preview</h3>
+                  <p className="text-xs text-muted-foreground mt-1">{itemCount} item{itemCount !== 1 ? 's' : ''}</p>
+                </div>
+                <div className="max-h-96 overflow-y-auto">
+                  {items.map((item) => (
+                    <div key={item.id} className="p-3 border-b border-border/50 last:border-b-0 flex gap-3 items-start">
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        width={50}
+                        height={50}
+                        className="rounded h-12 w-12 object-cover"
+                      />
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm font-medium text-foreground truncate">{item.name}</p>
+                        <p className="text-xs text-muted-foreground mt-1">{item.quantity}x ${item.price.toFixed(2)}</p>
+                      </div>
+                      <button
+                        onClick={() => removeItem(item.id)}
+                        className="text-muted-foreground hover:text-foreground transition-colors mt-1"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </div>
+                  ))}
+                </div>
+                <div className="p-4 border-t border-border">
+                  <div className="flex justify-between items-center mb-3">
+                    <span className="font-medium text-foreground">Total:</span>
+                    <span className="font-semibold text-foreground">${total.toFixed(2)}</span>
+                  </div>
+                  <Link href="/cart" className="w-full">
+                    <Button className="w-full" size="sm">
+                      View Cart
+                    </Button>
+                  </Link>
+                </div>
+              </div>
+            )}
+          </div>
+
+          <Link href="/cart">
+            <Button size="sm">Checkout</Button>
           </Link>
         </div>
       </nav>
@@ -83,7 +138,7 @@ export function SiteHeader() {
             <div className="flex items-center justify-between">
               <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
                 <Image
-                  src="/images/logo.png"
+                  src="/teatree/images/logo.png"
                   alt="Tea Tree Essentials"
                   width={40}
                   height={40}
