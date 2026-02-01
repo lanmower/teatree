@@ -54,7 +54,7 @@ export default function HomePage() {
                     <img
                       src="/teatree/images/logo.png"
                       alt="Tea Tree Essentials Logo"
-                      className="w-full h-full object-contain drop-shadow-xl"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                 </div>
