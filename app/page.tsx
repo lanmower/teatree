@@ -94,8 +94,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="relative group">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent rounded-3xl blur-2xl group-hover:blur-3xl transition-all duration-500" />
-                  <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden border-2 border-primary/20 group-hover:border-primary/40 transition-all duration-500 shadow-2xl">
+                  <div className="relative mx-auto w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden">
                     <img
                       src="/teatree/images/logo.png"
                       alt="Tea Tree Essentials Logo"
@@ -164,40 +163,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Seasonal Picks Section */}
-          {seasonalProducts.length > 0 && (
-            <section className="py-20 bg-gradient-to-br from-amber-50/50 to-orange-50/50 border-y border-amber-200/30">
-              <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="text-center mb-12">
-                  <div className="inline-block mb-4">
-                    <span className="text-4xl">🌟</span>
-                  </div>
-                  <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl">
-                    Seasonal Picks
-                  </h2>
-                  <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Discover our exclusive limited-edition seasonal collections,
-                    carefully crafted for the current season.
-                  </p>
-                </div>
 
-                <div className="grid sm:grid-cols-2 gap-6 justify-items-center mb-12">
-                  {seasonalProducts.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                  ))}
-                </div>
-
-                <div className="text-center">
-                  <Button asChild size="lg">
-                    <Link href="/products?category=seasonal">
-                      Shop All Seasonal Products
-                      <ChevronRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
-              </div>
-            </section>
-          )}
 
           {/* Educational Content Section */}
           <section className="py-20 bg-muted/20">
@@ -360,47 +326,7 @@ export default function HomePage() {
             </div>
           </section>
 
-          {/* Testimonials Section */}
-          <section className="py-20 bg-muted/30">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <div className="text-center mb-12">
-                <h2 className="font-serif text-3xl font-bold text-foreground sm:text-4xl">
-                  What Our Customers Say
-                </h2>
-                <p className="mt-4 text-muted-foreground">
-                  Trusted by thousands of customers worldwide
-                </p>
-              </div>
 
-              <div className="grid md:grid-cols-3 gap-8">
-                {configData.testimonials.map((testimonial, idx) => (
-                  <Card key={idx} className="bg-card hover:shadow-lg transition-all duration-300">
-                    <CardContent className="p-6">
-                      <div className="flex gap-1 mb-4">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className="h-5 w-5 fill-chart-4 text-chart-4"
-                          />
-                        ))}
-                      </div>
-                      <p className="text-foreground italic leading-relaxed font-serif text-lg">
-                        &quot;{testimonial.quote}&quot;
-                      </p>
-                      <div className="mt-4 pt-4 border-t border-border">
-                        <p className="font-semibold text-foreground">
-                          {testimonial.author}
-                        </p>
-                        <p className="text-sm text-muted-foreground">
-                          {testimonial.role}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
 
           {/* CTA Section */}
           <section className="py-20 bg-gradient-to-r from-primary to-primary/80 text-primary-foreground">
