@@ -1,0 +1,70 @@
+{
+  "site": {
+    "name": "Tea Tree Essentials South Africa",
+    "tagline": "Premium Distillery Products",
+    "description": "South African tea tree distillery producing pharmaceutical-grade distillates and hydrosols",
+    "logo": "/images/image.png",
+    "country": "South Africa",
+    "currency": "ZAR",
+    "currencySymbol": "R"
+  },
+  "navigation": [
+    { "label": "Home", "path": "/" },
+    { "label": "Products", "path": "/products" },
+    { "label": "Cart", "path": "/cart" }
+  ],
+  "hero": {
+    "title": "Pure Tea Tree Distillery",
+    "subtitle": "Premium pharmaceutical-grade distillates and hydrosols from South Africa",
+    "cta": {
+      "primary": { "label": "Shop Now", "path": "/products" },
+      "secondary": { "label": "Contact Us", "path": "/cart" }
+    }
+  },
+  "features": [
+    {
+      "title": "Pharmaceutical Grade",
+      "description": "Pure distillate and hydrosol products",
+      "icon": "leaf"
+    },
+    {
+      "title": "South African Made",
+      "description": "Proudly produced in South Africa",
+      "icon": "globe"
+    },
+    {
+      "title": "Quality Assured",
+      "description": "Rigorous testing and standards",
+      "icon": "shield"
+    }
+  ],
+  "testimonials": [
+    {
+      "quote": "Exceptional quality distillate. Perfect for our formulation needs.",
+      "author": "Beauty Brand Director",
+      "role": "B2B Client"
+    },
+    {
+      "quote": "The hydrosol is beautifully balanced and fresh. Highly recommend.",
+      "author": "Skincare Specialist",
+      "role": "Licensed Practitioner"
+    },
+    {
+      "quote": "Outstanding product quality and reliable supply from South Africa.",
+      "author": "Wellness Retailer",
+      "role": "B2B Partner"
+    }
+  ],
+  "footer": {
+    "contact": {
+      "email": "info@teatreeessentials.co.za",
+      "phone": "+27 (0) 11 XXX XXXX",
+      "address": "South Africa"
+    },
+    "social": {
+      "instagram": "teatreeessentials_za",
+      "facebook": "teatreeessentialssa",
+      "twitter": "teatreeessentials_za"
+    }
+  }
+}
