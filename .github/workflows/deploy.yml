@@ -1,0 +1,58 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - run: pnpm install --store-dir=/tmp/pnpm-store --no-frozen-lockfile
+      - run: pnpm build
+      - run: |
+          set -e
+          mkdir -p /tmp/pages
+          cd out
+          find . -type f | while read f; do
+            mkdir -p "/tmp/pages/$(dirname "$f")"
+            cat "$f" > "/tmp/pages/$f"
+          done
+          cd ..
+          rm -rf out
+          mv /tmp/pages out
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: out/
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
